@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+{% load static %}
+      <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="preconnect" href="https://fonts.gstatic.com">
+          <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+          <style type="text/css">
+              *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+header .logo{
+    position: relative;
+    max-width: 120px;
+
+}
+header ul{
+    position: relative;
+    display: flex;
+
+}
+
+header ul li{
+    list-style: none;
+
+}
+header ul li a{
+    display: inline-block;
+    color: #333;
+    font-weight: 400;
+    margin-left: 40px;
+    text-decoration: none;
+
+}
+header ul li a:hover{
+    cursor: pointer;
+    color: green;
+    transform: scale(1.5);
+}
+.content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.content .textBox{
+    position: relative;
+    max-width: 800px;
+}
+.content .textBox a:hover{
+    transform: scale(1.5);
+    box-shadow: 2px black;
+}
+.content .textBox h2{
+    color: #333;
+    font-size: 4em;
+    line-height: 1.4em;
+    font-weight: 500;
+}
+
+.content .textBox h2 span{
+   color: #017143;
+   font-size: 1.2em;
+   font-weight: 900;
+}
+.content .textBox p{
+    color: #333;
+}
+.content .textBox a{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: #017143;
+    color: #fff;
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+.content .imgBox{
+    width: 800px;
+    height: 400px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+    margin-top: 50px;
+}
+.content .imgBox img{
+    max-width: 600px;
+    border-radius: 40px;
+    box-shadow: #333;
+
+}
+.content .imgBox img:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+.thumb{
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%);
+    display: flex;
+
+}
+.thumb li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.thumb li:hover{
+    transform: translate(-15px);
+
+}
+.thumb li img{
+    max-width: 60px;
+    border-radius: 20px;
+    box-shadow: 1px black;
+}
+.circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #017143;
+    clip-path: circle(700px at right 900px);
+
+}
+@media (max-width: 991px){
+    header{
+        padding: 20px;
+    }
+    header .logo{
+        max-width: 90px;
+    }
+    header ul{
+        display: none;
+    }
+    .toggle{
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background: url("../images/menu.jpg");
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: invert(1);
+        z-index: 11;
+
+    }
+    .toggle .active{
+        background: url("../images/menu.jpg");
+        background-size: 25px;
+        background-position: center;
+        background-repeat: no-repeat;
+
+    }
+    header ul .navigation .active{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #fff;
+        z-index: 10;
+
+    }
+
+    section{
+        padding: 20px 20px 20px;
+    }
+
+    .content{
+        flex-direction: column;
+        margin-top: 100px;
+    }
+
+    .content .textBox h2{
+        color: #333;
+        font-size: 2.5em;
+    }
+    .content .textBox{
+        max-width: 100%;
+    }
+
+    .content .imgBox{
+        max-width: 100%;
+        justify-content: center;
+    }
+    .content .imgBox img{
+        max-width: 300px;
+        height: 300px;
+    }
+    .thumb li img{
+        max-width: 40px;
+    }
+    .circle{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #017143;
+        clip-path: circle(400px at center bottom);
+    }
+}
+
+          </style>
+
+          <title>ICT Management System</title>
+        </head>
+        <body>
+           <section>
+               <div class="circle">
+               </div>
+               <header>
+
+                   <a href="#"><img src="{% static 'images/logorwanda.png'%}" class="logo"></a>
+
+                   <div class="toggle active" onclick="toggleMenu();"></div>
+                   <ul class="navigation active">
+
+                     <li><a href="#">Home</a></li>
+                     <li><a href="#">Menu</a></li>
+                     <li><a href="#">What's up</a></li>
+                     <li><a href="#">Contact</a></li>
+                   </ul>
+               </header>
+               <div class="content">
+                  <div class="textBox">
+                      <h2>Huye District ICT Management System<br>It's <span>HDMS</span></h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim veniam, quis nostrexercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                      <a href="{% url 'login' %}" class="text-center">LOGIN</a>
+
+                  </div>
+                  <div class="imgBox">
+                      <img src="{% static 'images/img4.jpg' %}" class="starbucks">
+                  </div>
+                  </div>
+                  <ul class="thumb">
+                     <li><img src="{% static 'images/facebook.jpg' %}"></li>
+                     <li><img src="{% static 'images/twitter.png' %}"></li>
+                     <li><img src="{% static 'images/instagram.jpg' %}"></li>
+                  </ul>
+
+               </div>
+           </section>
+           <script type="text/javascript">
+              funtion toggleMenu(){
+                  var menuToggle = document.querySelector('.toggle');
+                  var navigation = document.querySelector('.navigation');
+
+                  menuToggle.classList.toggle('active')
+                  navigation.classList.toggle('active')
+              }
+
+           </script>
+
+        </body>
+     </html>

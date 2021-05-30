@@ -1,0 +1,175 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{##}
+{#</body>#}
+{#</html>#}
+
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+
+
+<title>HDMS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Itim&family=Roboto&family=Syne+Mono&display=swap" rel="stylesheet">
+<style type="text/css">
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    {#background-image: url("{% static 'images/back.jpg' %}");#}
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    {#background-color: dimgrey;#}
+    background-color: white;
+     {#background-color: rgba(0, 0, 0, 0.5);#}
+}
+{#.logo{#}
+{#    float: left;#}
+{#    height: 40px;#}
+{#    width: 30px;#}
+{#}#}
+{#.row{#}
+{#   height: 70px;#}
+{#    background-color: saddlebrown;#}
+{#    box-shadow: 2px 3px 2px white;#}
+{#}#}
+
+
+.main-nav{
+    float: right;
+    list-style: none;
+    margin-top: 30px;
+    margin-right: 50px;
+}
+.main-nav li{
+    display: inline-block;
+
+
+}
+.main-nav li a{
+    color: darkgreen;
+    text-decoration: none;
+    padding: 5px 10px;
+    font-family: "Roboto";
+    font-size: 15px;
+
+
+
+}
+.main-nav li.active a{
+    border: 1px solid black;
+    color: white;
+    background-color: darkblue;
+    border-radius: 25px;
+    box-shadow: 3px 3px 2px grey ;
+
+}
+.main-nav li a:hover{
+    border: 1px solid black;
+    background-color: darkblue;
+    color: white;
+    transition: all 0.5s ease-in;
+    border-radius: 25px;
+    box-shadow: 3px 3px 2px grey ;
+
+
+}
+.cnt{
+    position: absolute;
+    width: 1200px;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+h1{
+    color: darkblue;
+    text-transform: uppercase;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 350px;
+}
+.button{
+    margin-top: 40px;
+    margin-left: 475px;
+}
+.b{
+    {#border: 1px solid white;#}
+    padding: 10px 30px;
+    color: darkgreen;
+    text-decoration: none;
+    margin-right: 5px;
+    font-size: 13px;
+    text-transform: uppercase;
+
+}
+.b1{
+    background-color: darkblue;
+    color: white;
+    {#background-color: rgba(56, 3, 3, 0.657);#}
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 3px 3px 2px grey ;
+}
+.b2{
+
+    font-family: "Roboto";
+
+}
+.b2:hover{
+     {#background-color: rgba(56, 3, 3, 0.657);#}
+    background-color: darkblue;
+    color: white;
+    transition: all 0.5s ease-in;
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 3px 3px 2px grey ;
+}
+.logo img{
+    width: 100px;
+    height:auto;
+    float: left;
+    margin-left: 40px;
+    margin-top: 10px;
+
+}
+
+
+</style>
+</head>
+<body>
+<header>
+
+<div class="row">
+{#    <im  class="logo" src="{% static 'images/logorwanda.png' %}"></im>#}
+    <div class="logo">
+        <img src="{% static 'images/logorwanda.png' %}">
+    </div>
+<ul class="main-nav">
+<li class="active"><a href="">HOME</a></li>
+<li><a href="">GUIDELINES</a></li>
+<li><a href="">CONTACT US</a></li>
+
+</ul>
+</div>
+<div class="cnt">
+<h1>HDMS</h1>
+{#     <h3>#}
+{#        A platform that help the Management of ICT Materials in Huye District.#}
+{#    </h3>#}
+<div class="button">
+
+<a href="{% url 'login' %}" type="submit" class=" b b1">Sign In</a>
+<a href="http://197.243.22.137/Huye8/index.php?id=39" class=" b b2">District Website</a>
+</div>
+</div>
+</header>
+</body>
+</html>

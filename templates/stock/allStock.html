@@ -1,0 +1,106 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
+    
+
+
+
+    <div class="app-title">
+        <div>
+          <h1><i class="fa fa-th-list"></i>Huye District</h1>
+{#          <p>Available Stock</p>#}
+              <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="{% url 'dashboard2' %}" class="breadcrumb-link">Dashboard</a></li>
+
+                                            <li class="breadcrumb-item active" aria-current="page">Manage Stock</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+        </div>
+    </div>
+    <hr>
+    <div>
+    <a href="{% url 'recordstock' %}" class="btn btn-sm bg-info btn-info text-dark">RECORD NEW DEVICE</a>
+
+</div>
+    <hr>
+{##}
+{##}
+{#    <form action="" method="get">#}
+{#    <div class="row">#}
+{#        <div class="col-sm-3">{{ sFilter.form.code|as_crispy_field }}</div>#}
+{#        <div class="col-sm-3">{{ sFilter.form.name|as_crispy_field }}</div>#}
+{#        <button class="btn btn-sm bg-info" style="height: 28px; margin-top: 30px">search</button>#}
+{#    </div>#}
+{#    </form>#}
+ <div class="table-responsive" >
+     <table class="table" id="datatable">
+         <thead class="bg-light">
+         <tr class="border-0">
+             <th class="border-0">ID</th>
+             <th class="border-0">Device Name</th>
+             <th class="border-0">Serial Number</th>
+{#             <th class="border-0">Date Created</th>#}
+             <th class="border-0">Code</th>
+             <th class="border-0">Status</th>
+             <th class="border-0">Category</th>
+             <th>Update</th>
+             <th>Remove</th>
+         </tr>
+         </thead>
+         <tbody>
+         {% for stock in stocks %}
+             <tr>
+                 <td>{{ stock.id }}</td>
+                 <td>{{ stock.name }}</td>
+                 <td>{{ stock.serialNumber }}</td>
+{#                 <td>{{ stock.date_created }}</td>#}
+                 <td>{{ stock.code }}</td>
+                 <td>{{ stock.availability }}</td>
+                 <td>{{ stock.category }}</td>
+                 <td><a class="btn btn-sm btn-info" href="{% url 'updatestock'  stock.id %}">Update</a></td>
+                 <td><a class="btn btn-sm btn-danger" href="{% url 'deletestock' stock.id %}">Remove</a></td>
+
+            </tr>
+         {% endfor %}
+
+        </tbody>
+     </table>
+
+ </div>
+
+
+
+{#</div>#}
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
+
+
+  <script>
+   $('#datatable').dataTable({
+   });
+  </script>
+
+
+
+{% endblock %}
+{##}
+
+
+{#{% block scripts %}#}
+{#    <script>#}
+{#       const data = '{{ qs_json }}'#}
+{#       console.log(data)#}
+{##}
+{#    </script>#}
+{#{% endblock scripts %}#}
+
